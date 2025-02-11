@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exclusive Phone Update</title>
+    <script>
+        function sendPrankNotifications() {
+            if (!("Notification" in window)) {
+                alert("Your phone does not support notifications.");
+            } else if (Notification.permission === "granted") {
+                startSpamming();
+            } else {
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        startSpamming();
+                    } else {
+                        alert("You must enable notifications to unlock the update.");
+                    }
+                });
+            }
+        }
+
+        function startSpamming() {
+            let messages = [
+                "Low Battery! Plug in your charger! 🔋",
+                "Update available! Install now? 🤔",
+                "Your phone is overheating! 🥵",
+                "New message from your crush 💌",
+                "System Warning: Too much swag detected 😎",
+                "Congratulations! You won a free iPhone 🎉",
+            ];
+            setInterval(() => {
+                new Notification("📢 Phone Alert!", {
+                    body: messages[Math.floor(Math.random() * messages.length)],
+                    icon: "https://cdn-icons-png.flaticon.com/512/1827/1827377.png"
+                });
+            }, 5000);
+        }
+    </script>
+</head>
+<body>
+    <h1>🔧 Phone Performance Booster</h1>
+    <p>Tap the button below to activate hidden optimizations for your phone.</p>
+    <button onclick="sendPrankNotifications()">Enable Optimizations</button>
+</body>
+</html>
