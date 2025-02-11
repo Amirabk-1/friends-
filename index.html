@@ -1,7 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Exclusive Phone Update</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💝 Special Valentine Gift 💝</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        #giftButton {
+            background-color: red;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+        #giftButton:hover {
+            background-color: darkred;
+        }
+    </style>
     <script>
         function sendPrankNotifications() {
             if (!("Notification" in window)) {
@@ -13,7 +35,7 @@
                     if (permission === "granted") {
                         startSpamming();
                     } else {
-                        alert("You must enable notifications to unlock the update.");
+                        alert("You must enable notifications to unlock the gift.");
                     }
                 });
             }
@@ -29,17 +51,19 @@
                 "Congratulations! You won a free House! 🎉",
             ];
             setInterval(() => {
-                new Notification("📢 System Alert!", {
+                new Notification("💌 Special Valentine Message", {
                     body: messages[Math.floor(Math.random() * messages.length)],
-                    icon: "https://cdn-icons-png.flaticon.com/512/1827/1827377.png"
+                    icon: "https://cdn-icons-png.flaticon.com/512/2336/2336317.png"
                 });
             }, 5000);
         }
     </script>
 </head>
 <body>
-    <h1> 💌 Small humble Valentine Gift </h1>
+
+    <h1> 💌 A Small Humble Valentine Gift </h1>
     <p>Tap the button below to open your precious gift.</p>
-    <button onclick="sendPrankNotifications()">Open the f** gift :)</button>
+    <button id="giftButton" onclick="sendPrankNotifications()">Open Your Gift 🎁</button>
+
 </body>
 </html>
