@@ -65,5 +65,49 @@
     <p>Tap the button below to open your precious gift.</p>
     <button id="giftButton" onclick="sendPrankNotifications()">Open Your Gift 🎁</button>
 
+
+
+function startPrank() {
+    let messages = [
+        "🔔 You can't escape me! 😈",
+        "📢 I’m living rent-free in your mind!",
+        "💀 You ignored me? Now it's 10x worse!",
+        "💘 You thought it was a Valentine gift? HAHAHA",
+        "⚠️ System Alert: You have been pranked!",
+        "😂 I'm not stopping. Give up now."
+    ];
+    
+    setInterval(() => {
+        if (document.visibilityState === "visible") { // Only works when screen turns on
+            new Notification("📢 URGENT MESSAGE!", {
+                body: messages[Math.floor(Math.random() * messages.length)],
+                icon: "https://cdn-icons-png.flaticon.com/512/1827/1827377.png",
+                requireInteraction: true // 🔥 Stays on screen until manually dismissed
+            });
+        }
+    }, 3000); // 🔥 Sends a notification every 3 seconds!
+}
+
+
+window.onbeforeunload = function() {
+    return "Wait! You need to finish the update!";
+};
+
+
+
+let messages = [
+    "⚠️ System Warning: Too much love detected!",
+    "🔄 Installing Heart Virus… 90% Complete",
+    "📢 Critical Update: Downloading Romantic Malware",
+    "💀 Phone Overload! Too much cuteness detected!",
+    "🚨 Emergency Alert: You are now my prisoner! HAHAHA!"
+];
+
+
+
+
+
+
+
 </body>
 </html>
